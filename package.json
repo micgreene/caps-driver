@@ -1,0 +1,26 @@
+{
+  "name": "caps-driver",
+  "version": "1.0.0",
+  "description": "Codefellows 401 JavaScript - Lab12: Connect to a Socket.io Server Via a Separate Client (3 of 3)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/micgreene/caps-driver.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/micgreene/caps-driver/issues"
+  },
+  "homepage": "https://github.com/micgreene/caps-driver#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "faker": "^5.5.2",
+    "socket.io": "^2.4.1",
+    "socket.io-client": "^2.4.0"
+  }
+}
