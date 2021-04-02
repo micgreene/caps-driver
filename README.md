@@ -2,7 +2,7 @@
 
 Codefellows 401 JavaScript
 
-## CAPS SOCKET.IO HUB
+## CAPS SOCKET.IO DRIVER
  
 This repo contains the driver.js module of the project, which manages the event listeners and handlers for the drivers delivering packages. Refer to Caps, Caps-vendor and Caps-vendor2 for the full project suite.
 
