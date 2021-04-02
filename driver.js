@@ -11,9 +11,10 @@ const eventMessage = require('./event-message.js');
 require('dotenv').config();
 
 let host = 'http://localhost:3501';
+let STORENAME = process.env.STORENAME;
 
 //connect to socket
-const socket = io.connect(host);
+const socket = io.connect(`${host}/caps`);
 
 //call each event emitter explicitly
 socket.on('pickup', pickedUp);
