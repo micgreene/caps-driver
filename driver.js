@@ -9,15 +9,17 @@ const eventMessage = require('./event-message.js');
 
 //configure .env variables
 require('dotenv').config();
+const port = process.env.PORT;
 
-let host = 'http://localhost:3501';
-let STORENAME = process.env.STORENAME;
+//configure host route
+let host = `http://localhost:${port}`;
 
 //connect to socket
 const socket = io.connect(`${host}/caps`);
 
 //call each event emitter explicitly
 socket.on('pickup', pickedUp);
+
 
 function pickedUp(payload){
   //waits a second to simulate driver arrivig at store, then picks up package
@@ -33,8 +35,9 @@ function pickedUp(payload){
 }
 
 function setIntransit(orderDetails){
-  //update live status message
+  //update live status messages
   console.log(`Driver: "Picked up order #${orderDetails.orderId}"`);
+  console.log(`Driver: "Order #${orderDetails.orderId}, in transit"`);
 
   socket.emit('create-in-transit', orderDetails);
 
@@ -62,3 +65,5 @@ function setDelivered(orderDetails){
   //update the messaging system for new event
   eventMessage(eventType, orderDetails);
 }
+
+module.exports = { setIntransit, setDelivered };
